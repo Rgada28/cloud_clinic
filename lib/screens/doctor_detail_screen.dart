@@ -1,11 +1,9 @@
 import 'package:ekam_cloud_clinic/screens/select_package_screen.dart';
-import 'package:ekam_cloud_clinic/widgets/bottom_sheet_button.dart';
 import 'package:ekam_cloud_clinic/widgets/doctor_detail.dart';
 import 'package:ekam_cloud_clinic/widgets/doctor_profile_card.dart';
 import 'package:flutter/material.dart';
 
 import '../model/doctor.dart';
-import '../widgets/appointment.dart';
 
 class DoctorDetailsScreen extends StatelessWidget {
   const DoctorDetailsScreen({super.key, required this.doctor});
