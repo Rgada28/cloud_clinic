@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:ekam_cloud_clinic/model/doctor.dart';
+import 'package:ekam_cloud_clinic/screens/select_package_screen.dart';
 import 'package:ekam_cloud_clinic/widgets/doctor_profile_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -45,9 +46,6 @@ class _DoctorsListState extends State<DoctorsList> {
                   return DoctorProfileCard(doctor: doctors[index]);
                 }));
           }
-          // if (snapshot.connectionState == ConnectionState.waiting) {
-
-          // }
           return const Text("Fetching Data");
         },
       ),
