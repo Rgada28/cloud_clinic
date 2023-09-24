@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:ekam_cloud_clinic/model/doctor.dart';
-import 'package:ekam_cloud_clinic/screens/select_package_screen.dart';
+import 'package:ekam_cloud_clinic/screens/doctor_detail_screen.dart';
 import 'package:ekam_cloud_clinic/widgets/doctor_profile_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -35,7 +35,7 @@ class _DoctorsListState extends State<DoctorsList> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 500,
+      height: 800,
       child: FutureBuilder(
         future: getJsonData(),
         builder: (context, snapshot) {
@@ -43,7 +43,19 @@ class _DoctorsListState extends State<DoctorsList> {
             return ListView.builder(
                 itemCount: doctors.length,
                 itemBuilder: ((context, index) {
-                  return DoctorProfileCard(doctor: doctors[index]);
+                  return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return DoctorDetailsScreen(
+                                  doctor: doctors[index]);
+                            },
+                          ),
+                        );
+                      },
+                      child: DoctorProfileCard(doctor: doctors[index]));
                 }));
           }
           return const Text("Fetching Data");

@@ -133,7 +133,9 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return const ReviewBookingScreen();
+                              return ReviewBookingScreen(
+                                doctor: widget.doctor,
+                              );
                             },
                           ),
                         );
