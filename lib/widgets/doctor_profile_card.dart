@@ -8,8 +8,8 @@ class DoctorProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shadowColor: Colors.grey,
-      elevation: 0,
+      shadowColor: Colors.black,
+      elevation: 1,
       margin: const EdgeInsets.only(top: 10),
       color: Colors.white,
       child: Row(
@@ -20,7 +20,7 @@ class DoctorProfileCard extends StatelessWidget {
                 const EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 10),
             child: Stack(children: [
               CircleAvatar(
-                radius: 50,
+                radius: 60,
                 foregroundImage: NetworkImage(doctor.image),
               ),
               Positioned(

@@ -1,5 +1,5 @@
 import 'package:ekam_cloud_clinic/screens/select_package_screen.dart';
-import 'package:ekam_cloud_clinic/widgets/doctor_detail.dart';
+import 'package:ekam_cloud_clinic/widgets/doctor_stats.dart';
 import 'package:ekam_cloud_clinic/widgets/doctor_profile_card.dart';
 import 'package:flutter/material.dart';
 
@@ -18,21 +18,25 @@ class DoctorDetailsScreen extends StatelessWidget {
           title: const Text("Book Appointment"),
           centerTitle: true,
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              DoctorProfileCard(doctor: doctor),
-              DoctorDetail(doctor: doctor),
-              const Padding(
-                padding: EdgeInsets.only(top: 10),
-                child: Text("BOOK APPOINTMENT"),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            DoctorProfileCard(doctor: doctor),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: DoctorStats(doctor: doctor),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 20, left: 20),
+              child: Text(
+                "BOOK APPOINTMENT",
+                style: TextStyle(color: Colors.grey),
               ),
-              // Appointment(
-              //   doctor: doctor,
-              // ),
-            ],
-          ),
+            ),
+            // Appointment(
+            //   doctor: doctor,
+            // ),
+          ],
         ),
         bottomSheet: SizedBox(
           height: 70,
@@ -64,7 +68,7 @@ class DoctorDetailsScreen extends StatelessWidget {
                             ),
                           );
                         },
-                        child: const Text("Make new Appointment")),
+                        child: const Text("Make Appointment")),
                   ),
                 ),
               );

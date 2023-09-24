@@ -67,6 +67,7 @@ class _PackagesListState extends State<PackagesList> {
             ),
           ),
           Card(
+            margin: const EdgeInsets.only(top: 10),
             child: Row(
               children: [
                 Padding(
@@ -112,6 +113,7 @@ class _PackagesListState extends State<PackagesList> {
             ),
           ),
           Card(
+            margin: const EdgeInsets.only(top: 10),
             child: Row(
               children: [
                 Padding(
@@ -157,6 +159,7 @@ class _PackagesListState extends State<PackagesList> {
             ),
           ),
           Card(
+            margin: const EdgeInsets.only(top: 10),
             child: Row(
               children: [
                 Padding(

@@ -48,7 +48,7 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 25, right: 25, top: 20),
+                padding: const EdgeInsets.only(left: 25, right: 25, top: 15),
                 child: DropdownButtonFormField(
                   icon: const Icon(Icons.keyboard_arrow_down_outlined),
                   iconEnabledColor: Colors.blueAccent.shade700,
@@ -97,7 +97,7 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                 height: 20,
               ),
               const Padding(
-                padding: EdgeInsets.only(left: 25),
+                padding: EdgeInsets.only(left: 25, bottom: 10),
                 child: Text(
                   "Select Package",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
