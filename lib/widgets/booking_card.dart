@@ -1,6 +1,6 @@
 import 'package:ekam_cloud_clinic/model/booking.dart';
+import 'package:ekam_cloud_clinic/screens/doctor_detail_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dash/flutter_dash.dart';
 import 'package:intl/intl.dart';
 
 class BookingCard extends StatelessWidget {
@@ -67,13 +67,12 @@ class BookingCard extends StatelessWidget {
                                   Icons.pin_drop_outlined,
                                   color: Colors.blueAccent.shade700,
                                 ),
-                                Text("\t" + booking.doctor.location),
+                                Text("\t${booking.doctor.location}"),
                               ],
                             ),
                             Row(
                               children: [
                                 //TODO change Icon
-                                // ignore: prefer_const_constructors
                                 Icon(
                                   Icons.badge_outlined,
                                   color: Colors.blueAccent.shade700,
@@ -120,7 +119,12 @@ class BookingCard extends StatelessWidget {
                   ),
                   Expanded(
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return DoctorDetailsScreen(doctor: booking.doctor);
+                          }));
+                        },
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(
                                 Colors.blueAccent.shade700),

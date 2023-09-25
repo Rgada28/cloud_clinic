@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 import 'package:ekam_cloud_clinic/screens/review_booking_screen.dart';
 import 'package:ekam_cloud_clinic/widgets/packages_list.dart';
 import 'package:flutter/material.dart';
@@ -7,16 +5,23 @@ import 'package:flutter/material.dart';
 import '../model/doctor.dart';
 
 class SelectPackageScreen extends StatefulWidget {
-  const SelectPackageScreen({super.key, required this.doctor});
+  const SelectPackageScreen(
+      {super.key, required this.doctor, required this.bookingDetails});
 
   final Doctor doctor;
+  final Map<String, dynamic> bookingDetails;
 
   @override
   State<SelectPackageScreen> createState() => _SelectPackageScreenState();
 }
 
 class _SelectPackageScreenState extends State<SelectPackageScreen> {
-  List<String> times = ["Select Time", "30", "45", "60"];
+  List<String> times = [
+    "Select Time",
+    "30 Minutes",
+    "45 Minutes",
+    "60 Minutes"
+  ];
 
   String selectedTime = "";
   String selectedPackage = "";
@@ -25,6 +30,10 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
   void initState() {
     super.initState();
     selectedTime = times[0];
+  }
+
+  void setPackage(String package) {
+    selectedPackage = package;
   }
 
   @override
@@ -78,18 +87,16 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                         (time) => DropdownMenuItem<String>(
                           value: time,
                           child: Text(
-                            "$time Minute",
+                            time,
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                       )
                       .toList(),
                   onChanged: (String? value) {
-                    if (!value.isNull) {
-                      setState(() {
-                        selectedTime = value!;
-                      });
-                    }
+                    setState(() {
+                      selectedTime = value!;
+                    });
                   },
                 ),
               ),
@@ -103,7 +110,7 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
-              const PackagesList(),
+              PackagesList(setPackage: setPackage),
             ],
           ),
         ),
@@ -133,8 +140,13 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
+                              //TODO Add Validations
+                              widget.bookingDetails["duration"] = selectedTime;
+                              widget.bookingDetails["package"] =
+                                  selectedPackage;
                               return ReviewBookingScreen(
                                 doctor: widget.doctor,
+                                bookingDetails: widget.bookingDetails,
                               );
                             },
                           ),

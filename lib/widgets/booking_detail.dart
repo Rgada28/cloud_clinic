@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class BookingDetail extends StatelessWidget {
-  const BookingDetail({super.key});
+  const BookingDetail({super.key, required this.bookingDetails});
+  final Map<String, dynamic> bookingDetails;
 
   @override
   Widget build(BuildContext context) {
+    DateFormat formatter = DateFormat.yMMMMd('en_US');
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 25),
       child: Column(
@@ -18,9 +21,9 @@ class BookingDetail extends StatelessWidget {
                   "Date & Hour",
                   style: TextStyle(color: Colors.grey.shade600),
                 ),
-                const Text(
-                  "August 24, 2023 | 10:00 AM",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                Text(
+                  '${(formatter.format(bookingDetails["date"]))} | ${bookingDetails['time']}',
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 )
               ],
             ),
@@ -34,9 +37,9 @@ class BookingDetail extends StatelessWidget {
                   "Package",
                   style: TextStyle(color: Colors.grey.shade600),
                 ),
-                const Text(
-                  "Messaging",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                Text(
+                  bookingDetails['package'],
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 )
               ],
             ),
@@ -50,9 +53,9 @@ class BookingDetail extends StatelessWidget {
                   "Duration",
                   style: TextStyle(color: Colors.grey.shade600),
                 ),
-                const Text(
-                  "30 Minutes",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                Text(
+                  bookingDetails['duration'],
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 )
               ],
             ),

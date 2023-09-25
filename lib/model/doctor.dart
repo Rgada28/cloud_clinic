@@ -29,9 +29,11 @@ class Doctor {
     for (int i = 0; i < dateMap.values.length; i++) {
       String timeSlotString = dateMap.values.elementAt(i).toString();
       timeSlotString = timeSlotString.substring(1, timeSlotString.length - 1);
-      List<String> timeslots = timeSlotString.split(",");
-      availabilityList.add(
-          Availability(date: dateMap.keys.elementAt(i), timeSlots: timeslots));
+      List<String> timeslots =
+          timeSlotString.split(",").map((e) => e.trim()).toList();
+      availabilityList.add(Availability(
+          date: DateTime.parse(dateMap.keys.elementAt(i)),
+          timeSlots: timeslots));
     }
 
     return Doctor(
@@ -70,14 +72,14 @@ class Doctor {
 }
 
 class Availability {
-  String date;
+  DateTime date;
   List<String> timeSlots;
 
   Availability({required this.date, required this.timeSlots});
 
   factory Availability.fromMap(Map<String, dynamic> map) {
     return Availability(
-      date: map['date'],
+      date: DateTime.parse(map['date']),
       timeSlots: map['timeSlots'].map((e) => e as String).toList(),
     );
   }

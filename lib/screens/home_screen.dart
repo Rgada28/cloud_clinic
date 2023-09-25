@@ -21,14 +21,6 @@ class _MyHomePageState extends State<MyHomePage> {
       body: const SingleChildScrollView(
         child: DoctorsList(),
       ),
-      // floatingActionButton: FloatingActionButton.extended(
-      //   onPressed: (Doctor doctor) {
-      //     Navigator.push(context, MaterialPageRoute(builder: (context) {
-      //       return const DoctorDetailsScreen(doctor: doctor,);
-      //     }));
-      //   },
-      //   label: const Text("Schedule Appointment"),
-      // ),
     );
   }
 }

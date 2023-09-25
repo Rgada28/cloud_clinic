@@ -4,11 +4,28 @@ import 'package:ekam_cloud_clinic/widgets/doctor_stats.dart';
 import 'package:flutter/material.dart';
 
 import '../model/doctor.dart';
+import '../widgets/appointment.dart';
 
-class DoctorDetailsScreen extends StatelessWidget {
+class DoctorDetailsScreen extends StatefulWidget {
   const DoctorDetailsScreen({super.key, required this.doctor});
 
   final Doctor doctor;
+
+  @override
+  State<DoctorDetailsScreen> createState() => _DoctorDetailsScreenState();
+}
+
+class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
+  late DateTime selectedDate;
+  late String selectedTime;
+  final Map<String, dynamic> dateTime = {};
+
+  void setDateAndTime(DateTime date, String time) {
+    selectedDate = date;
+    selectedTime = time;
+    dateTime["date"] = selectedDate;
+    dateTime["time"] = selectedTime.split("-")[0];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +38,10 @@ class DoctorDetailsScreen extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            DoctorProfileCard(doctor: doctor),
+            DoctorProfileCard(doctor: widget.doctor),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: DoctorStats(doctor: doctor),
+              child: DoctorStats(doctor: widget.doctor),
             ),
             const Padding(
               padding: EdgeInsets.only(top: 20, left: 20),
@@ -33,9 +50,10 @@ class DoctorDetailsScreen extends StatelessWidget {
                 style: TextStyle(color: Colors.grey),
               ),
             ),
-            // Appointment(
-            //   doctor: doctor,
-            // ),
+            Appointment(
+              doctor: widget.doctor,
+              setSelectedDateTime: setDateAndTime,
+            ),
           ],
         ),
         bottomSheet: SizedBox(
@@ -63,7 +81,10 @@ class DoctorDetailsScreen extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return SelectPackageScreen(doctor: doctor);
+                                return SelectPackageScreen(
+                                  doctor: widget.doctor,
+                                  bookingDetails: dateTime,
+                                );
                               },
                             ),
                           );

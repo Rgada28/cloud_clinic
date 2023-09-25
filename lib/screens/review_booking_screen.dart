@@ -6,8 +6,10 @@ import 'package:flutter/material.dart';
 import '../model/doctor.dart';
 
 class ReviewBookingScreen extends StatelessWidget {
-  const ReviewBookingScreen({super.key, required this.doctor});
+  const ReviewBookingScreen(
+      {super.key, required this.doctor, required this.bookingDetails});
   final Doctor doctor;
+  final Map<String, dynamic> bookingDetails;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,12 @@ class ReviewBookingScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Column(
-        children: [DoctorProfileCard(doctor: doctor), const BookingDetail()],
+        children: [
+          DoctorProfileCard(doctor: doctor),
+          BookingDetail(
+            bookingDetails: bookingDetails,
+          )
+        ],
       ),
       bottomSheet: SizedBox(
         height: 60,
@@ -44,9 +51,10 @@ class ReviewBookingScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return const BookingConfirmationScreen(
-                                  // doctor: doctor,
-                                  );
+                              bookingDetails["doctor_name"] = doctor.name;
+                              return BookingConfirmationScreen(
+                                bookingDetails: bookingDetails,
+                              );
                             },
                           ),
                         );

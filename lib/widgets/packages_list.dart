@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PackagesList extends StatefulWidget {
-  const PackagesList({super.key});
+  const PackagesList({super.key, required this.setPackage});
+
+  final Function(String package) setPackage;
 
   @override
   State<PackagesList> createState() => _PackagesListState();
@@ -21,6 +23,7 @@ class _PackagesListState extends State<PackagesList> {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
+          //TODO Optimize Code increase Resuablitiy
           Card(
             child: Row(
               children: [
@@ -58,6 +61,7 @@ class _PackagesListState extends State<PackagesList> {
                     onChanged: (value) {
                       if (value == null) return;
                       setState(() {
+                        widget.setPackage(value);
                         selectedPackage = value;
                       });
                     },
@@ -104,6 +108,7 @@ class _PackagesListState extends State<PackagesList> {
                     onChanged: (value) {
                       if (value == null) return;
                       setState(() {
+                        widget.setPackage(value);
                         selectedPackage = value;
                       });
                     },
@@ -150,6 +155,7 @@ class _PackagesListState extends State<PackagesList> {
                     onChanged: (value) {
                       if (value == null) return;
                       setState(() {
+                        widget.setPackage(value);
                         selectedPackage = value;
                       });
                     },
@@ -191,11 +197,12 @@ class _PackagesListState extends State<PackagesList> {
                 Padding(
                   padding: const EdgeInsets.only(right: 25.0),
                   child: Radio.adaptive(
-                    value: packages[2],
+                    value: packages[3],
                     groupValue: selectedPackage,
                     onChanged: (value) {
                       if (value == null) return;
                       setState(() {
+                        widget.setPackage(value);
                         selectedPackage = value;
                       });
                     },

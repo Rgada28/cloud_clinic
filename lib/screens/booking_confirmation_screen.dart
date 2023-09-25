@@ -1,18 +1,15 @@
 import 'package:ekam_cloud_clinic/screens/tab_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
+import 'package:intl/intl.dart';
 
 class BookingConfirmationScreen extends StatelessWidget {
-  const BookingConfirmationScreen({super.key});
-  static Map<String, dynamic> values = {
-    "doctor_name": "Dr. John Doe",
-    "appointment_date": "2023-09-18",
-    "appointment_time": "09:00 AM - 09:30 AM",
-    "location": "123 Health St, MedCity",
-    "appointment_package": "Video Call"
-  };
+  const BookingConfirmationScreen({super.key, required this.bookingDetails});
+  final Map<String, dynamic> bookingDetails;
+
   @override
   Widget build(BuildContext context) {
+    DateFormat formatter = DateFormat.yMMMMd('en_US');
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -46,7 +43,7 @@ class BookingConfirmationScreen extends StatelessWidget {
               style: TextStyle(fontSize: 14, color: Colors.grey),
             ),
             Text(
-              '${values["doctor_name"]}',
+              '${bookingDetails["doctor_name"]}',
               style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
@@ -73,14 +70,16 @@ class BookingConfirmationScreen extends StatelessWidget {
               child: Row(
                 children: [
                   Icon(Icons.calendar_month, color: Colors.blueAccent.shade700),
-                  const Text("\t16 Aug, 2023",
-                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  Text(
+                    formatter.format(bookingDetails["date"]),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
                   const SizedBox(
                     width: 50,
                   ),
                   Icon(Icons.timer_rounded, color: Colors.blueAccent.shade700),
-                  const Text("\t10:00 AM",
-                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  Text(bookingDetails['time'],
+                      style: const TextStyle(fontWeight: FontWeight.bold)),
                 ],
               ),
             )
