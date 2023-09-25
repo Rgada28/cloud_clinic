@@ -28,11 +28,6 @@ class _DoctorsListState extends State<DoctorsList> {
   }
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 800,

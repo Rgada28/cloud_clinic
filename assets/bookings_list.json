@@ -1,0 +1,30 @@
+[
+    {
+        "booking_id": "A123",
+        "doctor_name": "Dr. John Doe",
+        "location": "123 Health St, MedCity",
+        "appointment_date": "2023-09-18",
+        "appointment_time": "09:00 AM - 09:30 AM"
+    },
+    {
+        "booking_id": "A124",
+        "doctor_name": "Dr. Jane Smith",
+        "location": "456 Wellness Ave, MedCity",
+        "appointment_date": "2023-09-20",
+        "appointment_time": "03:00 PM - 04:00 PM"
+    },
+    {
+        "booking_id": "A125",
+        "doctor_name": "Dr. Emily Brown",
+        "location": "789 Clinic Blvd, MedCity",
+        "appointment_date": "2023-09-22",
+        "appointment_time": "10:00 AM - 11:00 AM"
+    },
+    {
+        "booking_id": "A126",
+        "doctor_name": "Dr. Robert White",
+        "location": "101 Health Drive, MedCity",
+        "appointment_date": "2023-09-25",
+        "appointment_time": "02:00 PM - 02:30 PM"
+    }
+]

@@ -1,9 +1,6 @@
-import 'package:ekam_cloud_clinic/main.dart';
 import 'package:ekam_cloud_clinic/screens/tab_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
-
-import 'home_screen.dart';
 
 class BookingConfirmationScreen extends StatelessWidget {
   const BookingConfirmationScreen({super.key});

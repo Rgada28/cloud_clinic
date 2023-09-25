@@ -1,4 +1,4 @@
-import 'package:ekam_cloud_clinic/screens/booking_screen.dart';
+import 'package:ekam_cloud_clinic/screens/view_booking_screen.dart';
 import 'package:ekam_cloud_clinic/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +30,7 @@ class _TabScreenState extends State<TabScreen> {
   @override
   Widget build(BuildContext context) {
     if (_selectedTabIndex == 1) {
-      activePage = const BookingScreen();
+      activePage = const ViewBookingScreen();
     } else {
       activePage = const MyHomePage();
     }
