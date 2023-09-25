@@ -39,7 +39,13 @@ class _AppointmentState extends State<Appointment> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("Day"),
+          const Padding(
+            padding: EdgeInsets.only(top: 15.0, left: 20, bottom: 10),
+            child: Text(
+              "Day",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
           SizedBox(
             height: 40,
             child: ListView.builder(
@@ -102,9 +108,15 @@ class _AppointmentState extends State<Appointment> {
                   );
                 }),
           ),
-          const Text("Time"),
+          const Padding(
+            padding: EdgeInsets.only(top: 15.0, left: 20, bottom: 10),
+            child: Text(
+              "Time",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
           SizedBox(
-            height: 30,
+            height: 40,
             child: currentTimeSlots.isEmpty
                 ? const Center(
                     child: Text("No Time slot Available on this date"),
@@ -143,7 +155,7 @@ class _AppointmentState extends State<Appointment> {
                                 : Colors.blueAccent.shade700,
                           ),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
+                            borderRadius: BorderRadius.circular(20),
                           ),
                         ),
                       );
