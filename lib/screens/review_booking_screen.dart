@@ -1,3 +1,4 @@
+import 'package:ekam_cloud_clinic/screens/booking_confirmation_screen.dart';
 import 'package:ekam_cloud_clinic/widgets/booking_detail.dart';
 import 'package:ekam_cloud_clinic/widgets/doctor_profile_card.dart';
 import 'package:flutter/material.dart';
@@ -43,9 +44,9 @@ class ReviewBookingScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return ReviewBookingScreen(
-                                doctor: doctor,
-                              );
+                              return const BookingConfirmationScreen(
+                                  // doctor: doctor,
+                                  );
                             },
                           ),
                         );

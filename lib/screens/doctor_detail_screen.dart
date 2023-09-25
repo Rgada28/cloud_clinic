@@ -1,6 +1,6 @@
 import 'package:ekam_cloud_clinic/screens/select_package_screen.dart';
-import 'package:ekam_cloud_clinic/widgets/doctor_stats.dart';
 import 'package:ekam_cloud_clinic/widgets/doctor_profile_card.dart';
+import 'package:ekam_cloud_clinic/widgets/doctor_stats.dart';
 import 'package:flutter/material.dart';
 
 import '../model/doctor.dart';
