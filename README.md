@@ -4,13 +4,41 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To get started, clone this repository and run the following commands:
 
-A few resources to get you started if this is your first Flutter project:
+```
+flutter pub get
+flutter run
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The Cloud Clinic App presents a list of doctors through which users can book appointments.
+
+- FutureBuilder
+- ListViewBuilder
+- FilterChip
+- Radio
+- DropDown
+- Bottom Navigation Bar
+- Circle Avatar
+
+## Usage
+
+Users can select a doctor by tapping on to the card. which will lead them to Doctor detail screen.
+
+## Development
+
+The app is developed using Flutter. The code is well-organized and commented.
+
+| Doctors List                                | Doctor Detail Screen                                          |
+| ------------------------------------------- | ------------------------------------------------------------- |
+| ![doctor_list](screenshots/doctor_list.png) | ![expense_mobile_dark](screenshots/doctor_details_screen.png) |
+
+| Select Package Screen                                           | Review Summary Screen                                           |
+| --------------------------------------------------------------- | --------------------------------------------------------------- |
+| ![select package screen](screenshots/select_package_Screen.png) | ![Review summary Screen](screenshots/review_Summary_screen.png) |
+
+| Booking Confirmation Screen                                         | View All Bokkings                                          |
+| ------------------------------------------------------------------- | ---------------------------------------------------------- |
+| ![Booking Confirmation Screen](screenshots/confirmation_screen.png) | ![View All Bokkings](screenshots/view_bookings_screen.png) |

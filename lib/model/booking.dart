@@ -38,6 +38,6 @@ class Booking {
 
   @override
   String toString() {
-    return "Booking[\nBookingId:${bookingId}\nDoctorName:${doctorName}\nAppointment Date:${appointmentDate}\nAppointment Time:${appointmentTime}\nDoctor${_doctor}]";
+    return "Booking[\nBookingId:$bookingId\nDoctorName:$doctorName\nAppointment Date:$appointmentDate\nAppointment Time:$appointmentTime\nDoctor$_doctor]";
   }
 }

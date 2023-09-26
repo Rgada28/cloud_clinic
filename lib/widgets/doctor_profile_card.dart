@@ -69,50 +69,8 @@ class DoctorProfileCard extends StatelessWidget {
               ),
             ],
           ),
-          // const Spacer(),
-          // Padding(
-          //   padding: const EdgeInsets.only(right: 25.0),
-          //   child: Radio.adaptive(
-          //     value: packages[0],
-          //     groupValue: selectedPackage,
-          //     onChanged: (value) {
-          //       if (value == null) return;
-          //       setState(() {
-          //         selectedPackage = value;
-          //       });
-          //     },
-          //   ),
-          // ),
         ],
       ),
     );
-
-    // Padding(
-    //   padding: const EdgeInsets.all(8.0),
-    //   child: ListTile(
-    //     onTap: () =>
-    //         Navigator.push(context, MaterialPageRoute(builder: (context) {
-    //       return DoctorDetailsScreen(
-    //         doctor: doctor,
-    //       );
-    //     })),
-    //     leading: CircleAvatar(
-    //       foregroundImage: NetworkImage(doctor.image),
-    //     ),
-    //     title: Text(
-    //       doctor.name,
-    //       style: const TextStyle(
-    //         fontSize: 18.0,
-    //         fontWeight: FontWeight.bold,
-    //       ),
-    //     ),
-    //     subtitle: Text(
-    //       doctor.speciality,
-    //       style: const TextStyle(
-    //         fontSize: 12.0,
-    //       ),
-    //     ),
-    //   ),
-    // );
   }
 }
