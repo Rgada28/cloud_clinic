@@ -17,13 +17,15 @@ class _DoctorsListState extends State<DoctorsList> {
   List<Doctor> doctors = [];
 
   Future<List<Doctor>> getJsonData() async {
-    final String jsonData = await rootBundle.loadString('doctors_list.json');
-    final List data = jsonDecode(jsonData) as List;
-
+    final List data = await rootBundle
+        .loadStructuredData('assets/doctors_list.json', (String s) async {
+      return jsonDecode(s) as List;
+    });
     for (Map<String, dynamic> element in data) {
       Doctor doctor = Doctor.fromMap(element);
       doctors.add(doctor);
     }
+    print(doctors);
     return doctors;
   }
 

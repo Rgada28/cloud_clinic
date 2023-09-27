@@ -37,7 +37,7 @@ The app is developed using Flutter. The code is well-organized and commented.
 
 | Select Package Screen                                           | Review Summary Screen                                           |
 | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| ![select package screen](screenshots/select_package_Screen.png) | ![Review summary Screen](screenshots/review_Summary_screen.png) |
+| ![select package screen](screenshots/select_package_Screen.png) | ![Review summary Screen](screenshots/review_summary_screen.png) |
 
 | Booking Confirmation Screen                                         | View All Bokkings                                          |
 | ------------------------------------------------------------------- | ---------------------------------------------------------- |

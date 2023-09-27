@@ -19,13 +19,15 @@ class _ViewBookingScreenState extends State<ViewBookingScreen> {
   List<Booking> bookings = [];
 
   Future<List<Booking>> getJsonData() async {
-    final String doctorJsonData =
-        await rootBundle.loadString('doctors_list.json');
-    final List doctorData = jsonDecode(doctorJsonData) as List;
+    final List doctorData = await rootBundle
+        .loadStructuredData('assets/doctors_list.json', (String s) async {
+      return jsonDecode(s) as List;
+    });
 
-    final String bookingJsonData =
-        await rootBundle.loadString('bookings_list.json');
-    final List bookingData = jsonDecode(bookingJsonData) as List;
+    final List bookingData = await rootBundle
+        .loadStructuredData('assets/bookings_list.json', (String s) async {
+      return jsonDecode(s) as List;
+    });
 
     for (Map<String, dynamic> element in doctorData) {
       Doctor doctor = Doctor.fromMap(element);

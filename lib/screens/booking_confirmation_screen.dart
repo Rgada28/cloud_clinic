@@ -86,7 +86,7 @@ class BookingConfirmationScreen extends StatelessWidget {
           ],
         ),
         bottomSheet: SizedBox(
-          height: 120,
+          height: 130,
           child: BottomSheet(
             shadowColor: Colors.black,
             backgroundColor: Colors.white,
@@ -98,7 +98,7 @@ class BookingConfirmationScreen extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 20),
+                          horizontal: 20, vertical: 15),
                       child: SizedBox(
                         width: double.infinity,
                         height: 40,
