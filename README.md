@@ -1,4 +1,4 @@
-# ekam_cloud_clinic
+# cloud_clinic
 
 A new Flutter project.
 
