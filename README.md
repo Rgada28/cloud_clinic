@@ -23,9 +23,16 @@ The Cloud Clinic App presents a list of doctors through which users can book app
 - Bottom Navigation Bar
 - Circle Avatar
 
+### Key Features:
+
+- **Appointment Scheduling**: Users can easily schedule appointments with doctors based on their availability on specific dates.
+- **Flexible Consultation Options**: The app offers various consultation options, including messaging, video calls, voice calls, and in-person visits, allowing users to choose the communication method that suits their needs.
+- **Customizable Consultation Duration**: Users can personalize their consultation by selecting the desired duration with the doctor.
+- **User-Friendly Interface**: The app provides an intuitive and user-friendly interface for a seamless experience.
+
 ## Usage
 
-Users can select a doctor by tapping on to the card. which will lead them to Doctor detail screen.
+Users can select a doctor by tapping on the card. which will lead them to Doctor's detail screen.
 
 ## Development
 
@@ -42,3 +49,6 @@ The app is developed using Flutter. The code is well-organized and commented.
 | Booking Confirmation Screen                                         | View All Bokkings                                          |
 | ------------------------------------------------------------------- | ---------------------------------------------------------- |
 | ![Booking Confirmation Screen](screenshots/confirmation_screen.png) | ![View All Bokkings](screenshots/view_bookings_screen.png) |
+
+### Note:
+This project is not connected to a live backend or database for functional use.
