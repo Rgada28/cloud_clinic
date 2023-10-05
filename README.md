@@ -40,15 +40,16 @@ The app is developed using Flutter. The code is well-organized and commented.
 
 | Doctors List                                | Doctor Detail Screen                                          |
 | ------------------------------------------- | ------------------------------------------------------------- |
-| ![doctor_list](screenshots/doctor_list.png) | ![expense_mobile_dark](screenshots/doctor_details_screen.png) |
+| ![doctor_list](screenshots/doctor_list.jpg) | ![expense_mobile_dark](screenshots/doctor_details_screen.jpg) |
 
 | Select Package Screen                                           | Review Summary Screen                                           |
 | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| ![select package screen](screenshots/select_package_Screen.png) | ![Review summary Screen](screenshots/review_summary_screen.png) |
+| ![select package screen](screenshots/select_package_Screen.jpg) | ![Review summary Screen](screenshots/review_summary_screen.jpg) |
 
 | Booking Confirmation Screen                                         | View All Bokkings                                          |
 | ------------------------------------------------------------------- | ---------------------------------------------------------- |
-| ![Booking Confirmation Screen](screenshots/confirmation_screen.png) | ![View All Bokkings](screenshots/view_bookings_screen.png) |
+| ![Booking Confirmation Screen](screenshots/confirmation_screen.jpg) | ![View All Bokkings](screenshots/view_bookings_screen.gif) |
 
 ### Note:
+
 This project is not connected to a live backend or database for functional use.

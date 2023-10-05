@@ -25,7 +25,6 @@ class _DoctorsListState extends State<DoctorsList> {
       Doctor doctor = Doctor.fromMap(element);
       doctors.add(doctor);
     }
-    print(doctors);
     return doctors;
   }
 
@@ -38,22 +37,22 @@ class _DoctorsListState extends State<DoctorsList> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
-                itemCount: doctors.length,
-                itemBuilder: ((context, index) {
-                  return GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return DoctorDetailsScreen(
-                                  doctor: doctors[index]);
-                            },
-                          ),
-                        );
-                      },
-                      child: DoctorProfileCard(doctor: doctors[index]));
-                }));
+              itemCount: doctors.length,
+              itemBuilder: ((context, index) {
+                return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return DoctorDetailsScreen(doctor: doctors[index]);
+                          },
+                        ),
+                      );
+                    },
+                    child: DoctorProfileCard(doctor: doctors[index]));
+              }),
+            );
           }
           return const Text("Fetching Data");
         },

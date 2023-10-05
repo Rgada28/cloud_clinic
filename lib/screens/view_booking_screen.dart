@@ -59,12 +59,17 @@ class _ViewBookingScreenState extends State<ViewBookingScreen> {
         future: getJsonData(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return ListView.builder(
-              itemCount: bookings.length,
-              itemBuilder: (builder, index) {
-                return BookingCard(booking: bookings[index]);
-              },
-            );
+            return ListWheelScrollView(
+                itemExtent: 300,
+                children: bookings.map((booking) {
+                  return BookingCard(booking: booking);
+                }).toList()
+                // return ListView.builder(
+                //   itemCount: bookings.length,
+                //   itemBuilder: (builder, index) {
+                //     return BookingCard(booking: bookings[index]);
+                //   },
+                );
           }
           return const Center(
             child: Text("Fetching your Bookings"),

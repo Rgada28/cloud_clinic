@@ -16,7 +16,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         centerTitle: true,
-        title: const Text("Ekam Cloud Clinic"),
+        title: const Text("Cloud Clinic"),
       ),
       body: const SingleChildScrollView(
         child: DoctorsList(),
